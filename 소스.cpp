@@ -1,17 +1,31 @@
 #include <iostream>
 
-int main(void)
+using namespace std;
+
+int main()
 {
-	int x;
-	int y;
+	srand(time(NULL));
+	int data[10] = { 0, };
+	
 
-	std::cout << "출력 할 구구단 숫자:";
-	std::cin >> x;
-
-	for (y = 1; y <= 9; y++)
+	for (int i = 0; i < 10; i++)
 	{
-		std::cout << x << "*" << y << " = " << x * y << std::endl;
+		data[i] = (rand() % 10 + 1);
+		for (int j = 0; j < i; ++j)
+		{
+			if (data[i] == data[j])
+			{
+				i--;
+				break;
+			}
+		}
+
 	}
- 
-	return 0;
+	for (int i = 0; i < 10; i++)
+	{
+		cout; data[i] << endl;
+	}
+		
+
+		return 0;
 }
